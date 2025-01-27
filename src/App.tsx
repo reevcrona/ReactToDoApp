@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
-import TodoItem from './components/Todoitem';
-import TodoInput from './components/Todoinput';
+import TodoItem from './components/Todoitem.tsx';
+import TodoInput from './components/Todoinput.tsx';
 function App() {
   const [todoItems, setTodoItems] = useState(['Task1', 'Task2', 'Task3']);
   const [completedItems, setCompletedItems] = useState([]);
