@@ -37,7 +37,7 @@ function App() {
       </div>
       <div className='list-block'>
         <h2 className='title'>Completed Items</h2>
-        {completedItems.map((todo) => <TodoItem key={todo} title={todo} onDelete={deleteTodo} isCompleted />)}
+        {completedItems.map((todo) => <TodoItem key={todo} title={todo} onDelete={deleteTodo}  onComplete={completeTodoItem} isCompleted ={true} />)}
 
         <hr/>
       </div>

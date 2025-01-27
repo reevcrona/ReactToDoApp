@@ -6,15 +6,15 @@ interface TaskProps{
     title:string,
     onDelete: (todoItem:string) => void;
     onComplete: (todoItem:string) => void;
-    isCompleted?: (todoItem:string) => void;
+    isCompleted?: boolean
 }
 
 
 export default function TodoItem({title,onDelete,onComplete,isCompleted}: TaskProps){
-    function onClickDelete(target){
+    function onClickDelete(){
         onDelete(title);
     }
-    function onCompleteClick(target){
+    function onCompleteClick(){
         onComplete(title);
     }
     return(
@@ -22,7 +22,7 @@ export default function TodoItem({title,onDelete,onComplete,isCompleted}: TaskPr
             <div className="todo-title">{title}</div>
 
             <div className="icons-group">
-                {!isCompleted && <div className="todo-complete" onClick={()=>onCompleteClick(title)}>
+                {!isCompleted && <div className="todo-complete" onClick={()=>onCompleteClick()}>
                     <MaterialIcon icon='task_alt' color='white'/>
                 </div>
                 }
