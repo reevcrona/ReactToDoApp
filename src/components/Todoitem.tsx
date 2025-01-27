@@ -1,6 +1,16 @@
 import './Todoitem.css'
 import MaterialIcon from 'material-icons-react';
-export default function TodoItem({title,onDelete,onComplete,isCompleted}){
+
+interface TaskProps{
+    key:string,
+    title:string,
+    onDelete: (todoItem:string) => void;
+    onComplete: (todoItem:string) => void;
+    isCompleted?: (todoItem:string) => void;
+}
+
+
+export default function TodoItem({title,onDelete,onComplete,isCompleted}: TaskProps){
     function onClickDelete(target){
         onDelete(title);
     }

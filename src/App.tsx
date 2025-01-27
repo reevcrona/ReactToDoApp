@@ -1,22 +1,28 @@
 import { useState } from 'react';
 import './App.css';
-import TodoItem from './components/Todoitem.tsx';
-import TodoInput from './components/Todoinput.tsx';
+import TodoItem from './components/Todoitem';
+import TodoInput from './components/Todoinput';
+
+
 function App() {
-  const [todoItems, setTodoItems] = useState(['Task1', 'Task2', 'Task3']);
-  const [completedItems, setCompletedItems] = useState([]);
+  type Task = string  
+  type CompletedTask = string;
+
+
+  const [todoItems, setTodoItems] = useState<Task[]>(['Task1', 'Task2', 'Task3']);
+  const [completedItems, setCompletedItems] = useState<CompletedTask[]>([]);
   
   
-  function completeTodoItem(todoitem){
+  function completeTodoItem(todoitem:Task){
     setTodoItems(todoItems.filter(e=>e!==todoitem))
     setCompletedItems([...completedItems,todoitem])
   }
   
-  function addToDoItem(todoitem){
+  function addToDoItem(todoitem:Task){
     setTodoItems([...todoItems, todoitem])
   }
 
-  function deleteTodo(todoitem){
+  function deleteTodo(todoitem:Task){
     setTodoItems(todoItems.filter((e) => e !== todoitem) )
     setCompletedItems(completedItems.filter((e) => e !== todoitem) )
   }
