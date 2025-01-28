@@ -7,17 +7,13 @@ import { nanoid } from 'nanoid';
 
 
 export default function TodoInput({onAddItem}:todoInputProps){
+    
     const [currentInputValue,setcurrentInputValue] = useState<string>('');
    
     function addToDoItem(e:React.FormEvent<HTMLFormElement>):void{
-            
-
-            if(currentInputValue.length >= 1){
-                e.preventDefault();
-                onAddItem({title:currentInputValue,id:nanoid(),isCompleted:false,});
-                setcurrentInputValue('');
-            }
-        
+        e.preventDefault();
+        onAddItem({title:currentInputValue,id:nanoid(),isCompleted:false,});
+        setcurrentInputValue('');
     }
 
     function onInputChange(event:React.ChangeEvent<HTMLInputElement>):void{
