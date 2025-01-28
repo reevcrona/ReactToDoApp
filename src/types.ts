@@ -5,12 +5,7 @@ export interface Task {
     id:string,
     isCompleted:boolean
   }  
- export interface CompletedTask  {
-    title:string,
-    id:string,
-    isCompleted:boolean
-  }
-
+ 
  export interface TaskProps{
     key:string,
     task:Task

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import TodoItem from './components/Todoitem';
 import TodoInput from './components/Todoinput';
-import { Task , CompletedTask } from './types';
+import { Task} from './types';
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
 
 
   const [todoItems, setTodoItems] = useState<Task[]>([]);
-  const [completedItems, setCompletedItems] = useState<CompletedTask[]>([]);
+  const [completedItems, setCompletedItems] = useState<Task[]>([]);
   
   
   function completeTodoItem(todoitem:Task):void{

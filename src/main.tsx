@@ -13,7 +13,8 @@ if(rootElement){
       <App />
     </React.StrictMode>,
   )
-  
+}else{
+  console.error("Root element got lost in the matrix, try reloading the page.")
 }
 
 
