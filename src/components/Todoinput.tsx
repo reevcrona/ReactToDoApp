@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Todoinput.css';
 import MaterialIcon from 'material-icons-react';
-import { todoInputProps} from '../types';
+import {todoInputProps} from '../types';
 import { nanoid } from 'nanoid';
 
 
@@ -9,22 +9,29 @@ import { nanoid } from 'nanoid';
 export default function TodoInput({onAddItem}:todoInputProps){
     const [currentInputValue,setcurrentInputValue] = useState<string>('');
    
-    function addToDoItem():void{
-        onAddItem({title:currentInputValue,id:nanoid(),isCompleted:false});
-        setcurrentInputValue('');
+    function addToDoItem(e:React.MouseEvent<HTMLButtonElement>):void{
+            e.preventDefault();
+
+            if(currentInputValue.length >= 1){
+                onAddItem({title:currentInputValue,id:nanoid(),isCompleted:false,});
+                setcurrentInputValue('');
+            }
         
     }
+
     function onInputChange(event:React.ChangeEvent<HTMLInputElement>):void{
         setcurrentInputValue(event.target.value)
     }
+    
     return(
         <>
-        <div className="todo-input-div">
-            <input className='todo-input' type='text' placeholder='Enter your todo here' onChange={(e) => onInputChange(e)} value={currentInputValue} />
-            <button className='todo-input-add' onClick={addToDoItem}>
-                < MaterialIcon icon='add' />
-            </button>
-        </div>
+            <form className="todo-input-div">
+                <input required minLength={1} className='todo-input' type='text' placeholder='Enter your todo here' onChange={(e) => onInputChange(e)} value={currentInputValue} />
+                <button className='todo-input-add' onClick={addToDoItem}>
+                    < MaterialIcon icon='add' />
+                </button>
+            </form>
+        
         </>
     )
 }

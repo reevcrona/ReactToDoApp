@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import TodoItem from './components/Todoitem';
 import TodoInput from './components/Todoinput';
-import { Task} from './types';
+import {Task} from './types';
 
 
 function App() {
