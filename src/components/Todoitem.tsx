@@ -1,23 +1,18 @@
 import './Todoitem.css'
 import MaterialIcon from 'material-icons-react';
-import { Task } from '../types';
-interface TaskProps{
-    key:string,
-    task:Task
-    onDelete: (todoItem:Task) => void;
-    onComplete: (todoItem:Task) => void;
-    isCompleted: boolean
-}
+import { TaskProps } from '../types';
 
 
-export default function TodoItem({task,onDelete,onComplete,isCompleted}: TaskProps){
+
+
+export default function TodoItem({task,onDelete,onComplete}: TaskProps){
     
     return(
         <div className='todo-item'>
             <div className="todo-title">{task.title}</div>
 
             <div className="icons-group">
-                {!isCompleted && <div className="todo-complete" onClick={() => onComplete(task)}>
+                {!task.isCompleted && <div className="todo-complete" onClick={() => onComplete(task)}>
                     <MaterialIcon icon='task_alt' color='white'/>
                 </div>
                 }

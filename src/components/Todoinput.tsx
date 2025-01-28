@@ -12,7 +12,7 @@ export default function TodoInput({onAddItem}:todoInputProps){
     const [currentInputValue,setcurrentInputValue] = useState('');
    
     function addToDoItem():void{
-        onAddItem({title:currentInputValue,id:nanoid(),isComplete:false});
+        onAddItem({title:currentInputValue,id:nanoid(),isCompleted:false});
         setcurrentInputValue('');
         
     }

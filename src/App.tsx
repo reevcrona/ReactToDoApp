@@ -17,7 +17,7 @@ function App() {
     setTodoItems(todoItems.filter(item => item.id !== todoitem.id))
     const updatedTask:Task = {
       ...todoitem,
-      isComplete:!todoitem.isComplete
+      isCompleted:!todoitem.isCompleted
     }
     setCompletedItems([...completedItems,updatedTask])
   }
@@ -37,11 +37,11 @@ function App() {
       <div  className='list-block'>
         <h2 className='title'>Todo Items</h2> 
         <hr/>
-        {todoItems.map((todo) => <TodoItem key={todo.id} task= {todo} onDelete={deleteTodo} onComplete={completeTodoItem} isCompleted = {todo.isComplete}/>)}
+        {todoItems.map((todo) => <TodoItem key={todo.id} task= {todo} onDelete={deleteTodo} onComplete={completeTodoItem} />)}
       </div>
       <div className='list-block'>
         <h2 className='title'>Completed Items</h2>
-        {completedItems.map((todo) => <TodoItem key={todo.id} task={todo} onDelete={deleteTodo}  onComplete={completeTodoItem} isCompleted ={todo.isComplete} />)}
+        {completedItems.map((todo) => <TodoItem key={todo.id} task={todo} onDelete={deleteTodo}  onComplete={completeTodoItem}/>)}
 
         <hr/>
       </div>
