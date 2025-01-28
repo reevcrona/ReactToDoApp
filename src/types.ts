@@ -9,8 +9,10 @@ export interface Task {
  export interface TaskProps{
     key:string,
     task:Task
-    onDelete: (todoItem:Task) => void;
-    onComplete: (todoItem:Task) => void;
+    clickHandlers:{
+        onDelete:(todoItem:Task) => void;
+        onComplete:(todoItem:Task) => void;
+    }
 }
 
 export interface todoInputProps{

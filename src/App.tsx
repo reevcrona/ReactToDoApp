@@ -31,13 +31,17 @@ function App() {
     setCompletedItems(completedItems.filter((item) => item.id !== todoitem.id) )
   }
 
-  function renderTasks(taskArray:Task[]):JSX.Element[]{
-   return taskArray.map((item) =>
+  function renderTasks(taskArray:Task[]):React.JSX.Element[]{
+    return taskArray.map((item) =>
    <TodoItem 
       key={item.id} 
       task= {item} 
-      onDelete={deleteTodo} 
-      onComplete={completeTodoItem} 
+      clickHandlers = {
+        {
+          onDelete:deleteTodo,
+          onComplete:completeTodoItem
+        }
+      }
     /> )
   }
 
