@@ -1,25 +1,25 @@
 import './Todoitem.css'
 import MaterialIcon from 'material-icons-react';
-
+import { Task } from '../types';
 interface TaskProps{
     key:string,
-    title:string,
-    onDelete: (todoItem:string) => void;
-    onComplete: (todoItem:string) => void;
+    task:Task
+    onDelete: (todoItem:Task) => void;
+    onComplete: (todoItem:Task) => void;
     isCompleted?: boolean
 }
 
 
-export default function TodoItem({title,onDelete,onComplete,isCompleted}: TaskProps){
+export default function TodoItem({task,onDelete,onComplete,isCompleted}: TaskProps){
     function onClickDelete():void{
-        onDelete(title);
+        onDelete(task);
     }
     function onCompleteClick():void{
-        onComplete(title);
+        onComplete(task);
     }
     return(
         <div className='todo-item'>
-            <div className="todo-title">{title}</div>
+            <div className="todo-title">{task.title}</div>
 
             <div className="icons-group">
                 {!isCompleted && <div className="todo-complete" onClick={()=>onCompleteClick()}>

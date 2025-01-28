@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import './Todoinput.css';
 import MaterialIcon from 'material-icons-react';
-
+import { Task } from '../types';
+import { nanoid } from 'nanoid';
 interface todoInputProps{
-    onAddItem:(todoItem:string) => void
+    onAddItem:(todoItem:Task) => void
 }
 
 export default function TodoInput({onAddItem}:todoInputProps){
     const [currentInputValue,setcurrentInputValue] = useState('');
    
     function addToDoItem():void{
-        onAddItem(currentInputValue);
+        onAddItem({title:currentInputValue,id:nanoid()});
         setcurrentInputValue('');
         
     }

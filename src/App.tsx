@@ -2,19 +2,19 @@ import { useState } from 'react';
 import './App.css';
 import TodoItem from './components/Todoitem';
 import TodoInput from './components/Todoinput';
+import { Task , CompletedTask } from './types';
 
 
 function App() {
-  type Task = string  
-  type CompletedTask = string;
+  
 
 
-  const [todoItems, setTodoItems] = useState<Task[]>(['Task1', 'Task2', 'Task3']);
+  const [todoItems, setTodoItems] = useState<Task[]>([]);
   const [completedItems, setCompletedItems] = useState<CompletedTask[]>([]);
   
   
   function completeTodoItem(todoitem:Task):void{
-    setTodoItems(todoItems.filter(e => e!==todoitem))
+    setTodoItems(todoItems.filter(e => e !== todoitem))
     setCompletedItems([...completedItems,todoitem])
   }
   
@@ -33,7 +33,7 @@ function App() {
       <div  className='list-block'>
         <h2 className='title'>Todo Items</h2> 
         <hr/>
-        {todoItems.map((todo) => <TodoItem key={todo} title={todo} onDelete={deleteTodo} onComplete={completeTodoItem}/>)}
+        {todoItems.map((todo) => <TodoItem key={todo.id} task= {todo} onDelete={deleteTodo} onComplete={completeTodoItem}/>)}
       </div>
       <div className='list-block'>
         <h2 className='title'>Completed Items</h2>
