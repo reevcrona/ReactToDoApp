@@ -24,7 +24,14 @@ export default function TodoInput({onAddItem}:todoInputProps){
         <>
             <form className="todo-input-div" onSubmit={addToDoItem}>
                 <label htmlFor="task-input"></label>
-                <input id="task-input" required minLength={1} className='todo-input' type='text' placeholder='Enter your todo here' onChange={(e) => onInputChange(e)} value={currentInputValue} />
+                <input 
+                    id="task-input" 
+                    required minLength={1} 
+                    className='todo-input' 
+                    type='text' 
+                    placeholder='Enter your todo here' 
+                    onChange={(e) => onInputChange(e)} value={currentInputValue} 
+                />
                 <button className='todo-input-add' type="submit">
                     < MaterialIcon icon='add' />
                 </button>
