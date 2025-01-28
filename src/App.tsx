@@ -14,7 +14,7 @@ function App() {
   
   
   function completeTodoItem(todoitem:Task):void{
-    setTodoItems(todoItems.filter(e => e !== todoitem))
+    setTodoItems(todoItems.filter(item => item.id !== todoitem.id))
     setCompletedItems([...completedItems,todoitem])
   }
   
@@ -23,8 +23,8 @@ function App() {
   }
 
   function deleteTodo(todoitem:Task):void{
-    setTodoItems(todoItems.filter((e) => e !== todoitem) )
-    setCompletedItems(completedItems.filter((e) => e !== todoitem) )
+    setTodoItems(todoItems.filter((item) => item.id !== todoitem.id) )
+    setCompletedItems(completedItems.filter((item) => item.id !== todoitem.id) )
   }
   return (
     <div className="app">
@@ -37,7 +37,7 @@ function App() {
       </div>
       <div className='list-block'>
         <h2 className='title'>Completed Items</h2>
-        {completedItems.map((todo) => <TodoItem key={todo} title={todo} onDelete={deleteTodo}  onComplete={completeTodoItem} isCompleted ={true} />)}
+        {completedItems.map((todo) => <TodoItem key={todo.id} task={todo} onDelete={deleteTodo}  onComplete={completeTodoItem} isCompleted ={true} />)}
 
         <hr/>
       </div>
