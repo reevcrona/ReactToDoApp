@@ -9,10 +9,11 @@ import { nanoid } from 'nanoid';
 export default function TodoInput({onAddItem}:todoInputProps){
     const [currentInputValue,setcurrentInputValue] = useState<string>('');
    
-    function addToDoItem(e:React.MouseEvent<HTMLButtonElement>):void{
-            e.preventDefault();
+    function addToDoItem(e:React.FormEvent<HTMLFormElement>):void{
+            
 
             if(currentInputValue.length >= 1){
+                e.preventDefault();
                 onAddItem({title:currentInputValue,id:nanoid(),isCompleted:false,});
                 setcurrentInputValue('');
             }
@@ -25,9 +26,10 @@ export default function TodoInput({onAddItem}:todoInputProps){
     
     return(
         <>
-            <form className="todo-input-div">
-                <input required minLength={1} className='todo-input' type='text' placeholder='Enter your todo here' onChange={(e) => onInputChange(e)} value={currentInputValue} />
-                <button className='todo-input-add' onClick={addToDoItem}>
+            <form className="todo-input-div" onSubmit={addToDoItem}>
+                <label htmlFor="task-input"></label>
+                <input id="task-input" required minLength={1} className='todo-input' type='text' placeholder='Enter your todo here' onChange={(e) => onInputChange(e)} value={currentInputValue} />
+                <button className='todo-input-add' type="submit">
                     < MaterialIcon icon='add' />
                 </button>
             </form>
