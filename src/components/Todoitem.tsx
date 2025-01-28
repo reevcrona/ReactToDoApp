@@ -11,10 +11,10 @@ interface TaskProps{
 
 
 export default function TodoItem({title,onDelete,onComplete,isCompleted}: TaskProps){
-    function onClickDelete(){
+    function onClickDelete():void{
         onDelete(title);
     }
-    function onCompleteClick(){
+    function onCompleteClick():void{
         onComplete(title);
     }
     return(

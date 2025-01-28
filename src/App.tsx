@@ -13,16 +13,16 @@ function App() {
   const [completedItems, setCompletedItems] = useState<CompletedTask[]>([]);
   
   
-  function completeTodoItem(todoitem:Task){
-    setTodoItems(todoItems.filter(e=>e!==todoitem))
+  function completeTodoItem(todoitem:Task):void{
+    setTodoItems(todoItems.filter(e => e!==todoitem))
     setCompletedItems([...completedItems,todoitem])
   }
   
-  function addToDoItem(todoitem:Task){
+  function addToDoItem(todoitem:Task):void{
     setTodoItems([...todoItems, todoitem])
   }
 
-  function deleteTodo(todoitem:Task){
+  function deleteTodo(todoitem:Task):void{
     setTodoItems(todoItems.filter((e) => e !== todoitem) )
     setCompletedItems(completedItems.filter((e) => e !== todoitem) )
   }

@@ -8,12 +8,13 @@ interface todoInputProps{
 
 export default function TodoInput({onAddItem}:todoInputProps){
     const [currentInputValue,setcurrentInputValue] = useState('');
-    function addToDoItem(){
+   
+    function addToDoItem():void{
         onAddItem(currentInputValue);
         setcurrentInputValue('');
         
     }
-    function onInputChange(event:React.ChangeEvent<HTMLInputElement>){
+    function onInputChange(event:React.ChangeEvent<HTMLInputElement>):void{
         setcurrentInputValue(event.target.value)
     }
     return(
