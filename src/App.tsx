@@ -7,31 +7,29 @@ import { Task} from './types';
 
 function App() {
   
-
-
   const [todoItems, setTodoItems] = useState<Task[]>([]);
   const [completedItems, setCompletedItems] = useState<Task[]>([]);
   
   
-  function completeTodoItem(todoitem:Task):void{
-    setTodoItems((prevState) => prevState.filter(item => item.id !== todoitem.id))
+  function completeTodoItem(todoItem:Task):void{
+    setTodoItems((prevState) => prevState.filter(item => item.id !== todoItem.id))
     
     const updatedTask:Task = {
-      ...todoitem,
-      isCompleted:!todoitem.isCompleted
+      ...todoItem,
+      isCompleted:!todoItem.isCompleted
     }
     setCompletedItems((prevState) => [...prevState,updatedTask])
   }
   
-  function addToDoItem(todoitem:Task):void{
-    setTodoItems((prevState) => [...prevState,todoitem])
+  function addToDoItem(todoItem:Task):void{
+    setTodoItems((prevState) => [...prevState,todoItem])
   }
 
-  function deleteTodo(todoitem:Task):void{
+  function deleteTodo(todoItem:Task):void{
 
-    const listToUpdate = todoitem.isCompleted ? setCompletedItems : setTodoItems;
+    const listToUpdate = todoItem.isCompleted ? setCompletedItems : setTodoItems;
 
-    listToUpdate((prevState) => prevState.filter((item) => item.id !== todoitem.id))
+    listToUpdate((prevState) => prevState.filter((item) => item.id !== todoItem.id))
      
   }
 
