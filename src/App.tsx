@@ -27,8 +27,11 @@ function App() {
   }
 
   function deleteTodo(todoitem:Task):void{
-    setTodoItems(todoItems.filter((item) => item.id !== todoitem.id) )
-    setCompletedItems(completedItems.filter((item) => item.id !== todoitem.id) )
+
+    const listToUpdate = todoitem.isCompleted ? setCompletedItems : setTodoItems;
+
+    listToUpdate((prevState) => prevState.filter((item) => item.id !== todoitem.id))
+     
   }
 
   function renderTasks(taskArray:Task[]):React.JSX.Element[]{
