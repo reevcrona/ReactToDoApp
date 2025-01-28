@@ -11,22 +11,20 @@ interface TaskProps{
 
 
 export default function TodoItem({task,onDelete,onComplete,isCompleted}: TaskProps){
-    function onClickDelete():void{
-        onDelete(task);
-    }
-    function onCompleteClick():void{
-        onComplete(task);
-    }
+    
+
+
+
     return(
         <div className='todo-item'>
             <div className="todo-title">{task.title}</div>
 
             <div className="icons-group">
-                {!isCompleted && <div className="todo-complete" onClick={()=>onCompleteClick()}>
+                {!isCompleted && <div className="todo-complete" onClick={() => onComplete(task)}>
                     <MaterialIcon icon='task_alt' color='white'/>
                 </div>
                 }
-                <div className="todo-delete" onClick={onClickDelete}>
+                <div className="todo-delete" onClick={() => onDelete(task)}>
                     <MaterialIcon icon='delete' color='white'/>
                 </div>
             </div>
