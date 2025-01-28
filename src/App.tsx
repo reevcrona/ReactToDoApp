@@ -14,16 +14,17 @@ function App() {
   
   
   function completeTodoItem(todoitem:Task):void{
-    setTodoItems(todoItems.filter(item => item.id !== todoitem.id))
+    setTodoItems((prevState) => prevState.filter(item => item.id !== todoitem.id))
+    
     const updatedTask:Task = {
       ...todoitem,
       isCompleted:!todoitem.isCompleted
     }
-    setCompletedItems([...completedItems,updatedTask])
+    setCompletedItems((prevState) => [...prevState,updatedTask])
   }
   
   function addToDoItem(todoitem:Task):void{
-    setTodoItems([...todoItems, todoitem])
+    setTodoItems((prevState) => [...prevState,todoitem])
   }
 
   function deleteTodo(todoitem:Task):void{
