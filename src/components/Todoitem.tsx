@@ -6,15 +6,12 @@ interface TaskProps{
     task:Task
     onDelete: (todoItem:Task) => void;
     onComplete: (todoItem:Task) => void;
-    isCompleted?: boolean
+    isCompleted: boolean
 }
 
 
 export default function TodoItem({task,onDelete,onComplete,isCompleted}: TaskProps){
     
-
-
-
     return(
         <div className='todo-item'>
             <div className="todo-title">{task.title}</div>
