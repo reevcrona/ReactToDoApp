@@ -6,6 +6,10 @@ export default {
       minWidth: {
         taskminwidth: "80%",
       },
+      maxWidth: {
+        taskMaxWidth: "600px",
+        taskContainerMaxWidth: "700px",
+      },
     },
   },
   plugins: [],
