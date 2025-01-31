@@ -10,7 +10,7 @@ export default function TodoItem({
 }: TaskProps) {
   return (
     <div
-      className={`max-w-taskMaxWidth flex w-full items-center justify-between ${taskBgColor} rounded-lg p-4 text-white`}
+      className={`max-w-taskMaxWidth border-3 flex w-full items-center justify-between border-2 border-black ${taskBgColor} rounded-lg p-4 text-white`}
     >
       <h3 className={`${taskTextColor} text-xl font-medium`}>{task.title}</h3>
 

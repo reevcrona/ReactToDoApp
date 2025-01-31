@@ -19,7 +19,7 @@ export default function TodoInput({ onAddItem }: todoInputProps) {
 
   return (
     <form
-      className="relative flex h-12 w-full items-center justify-center"
+      className="relative flex h-12 w-full items-center justify-center rounded border-2 border-black"
       onSubmit={addToDoItem}
     >
       <label htmlFor="task-input"></label>
