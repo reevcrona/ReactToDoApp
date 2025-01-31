@@ -49,20 +49,18 @@ function App() {
   }
 
   return (
-    <div className="min-h-full bg-sky-700 p-5 font-mono">
-      <h1 className="title">ToDo List</h1>
-      <div>
+    <div className="flex min-h-screen flex-col items-center justify-start bg-sky-700 font-mono">
+      <h1 className="title mb-10 mt-10 text-5xl text-slate-50">ToDo List</h1>
+      <div className="w-full">
         <TodoInput onAddItem={addToDoItem} />
       </div>
-      <div className="flex flex-col justify-stretch gap-4">
-        <h2 className="title">Todo Items</h2>
-        <hr />
+      <div className="min-w-taskminwidth flex flex-col items-center justify-center gap-4 border-b-2 pb-4">
+        <h2 className="title mt-4 text-2xl text-slate-50">Todo Items</h2>
         {renderTasks(todoItems)}
       </div>
-      <div className="flex flex-col justify-stretch gap-4">
-        <h2 className="title">Completed Items</h2>
+      <div className="mt min-w-taskminwidth mb-5 mt-4 flex flex-col items-center justify-stretch gap-4 border-b-2 pb-4">
+        <h2 className="title mt-4 text-2xl text-slate-50">Completed Items</h2>
         {renderTasks(completedItems)}
-        <hr />
       </div>
     </div>
   );

@@ -9,11 +9,11 @@ export default function TodoItem({
 }: TaskProps) {
   return (
     <div
-      className={`flex items-center justify-between ${taskBgColor} rounded-lg p-4 text-white`}
+      className={`min-w-taskminwidth flex items-center justify-between ${taskBgColor} rounded-lg p-4 text-white`}
     >
       <div className="text-zinc-950">{task.title}</div>
 
-      <div className="icons-group">
+      <div className="flex items-center justify-center">
         {!task.isCompleted && (
           <div
             className="hover:cursor-pointer"
