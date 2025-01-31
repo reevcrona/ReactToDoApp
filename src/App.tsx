@@ -60,7 +60,6 @@ function App() {
       <div className='list-block'>
         <h2 className='title'>Completed Items</h2>
         {renderTasks(completedItems)}
-
         <hr/>
       </div>
     </div>

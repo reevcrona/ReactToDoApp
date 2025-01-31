@@ -16,8 +16,8 @@ export default function TodoInput({onAddItem}:todoInputProps){
         setcurrentInputValue('');
     }
 
-    function onInputChange(event:React.ChangeEvent<HTMLInputElement>):void{
-        setcurrentInputValue(event.target.value)
+    function onInputChange(e:React.ChangeEvent<HTMLInputElement>):void{
+        setcurrentInputValue(e.target.value)
     }
     
     return(
