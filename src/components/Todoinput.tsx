@@ -19,7 +19,7 @@ export default function TodoInput({ onAddItem }: todoInputProps) {
 
   return (
     <form
-      className="flex w-full items-center justify-center"
+      className="relative flex h-12 w-full items-center justify-center"
       onSubmit={addToDoItem}
     >
       <label htmlFor="task-input"></label>
@@ -27,14 +27,17 @@ export default function TodoInput({ onAddItem }: todoInputProps) {
         id="task-input"
         required
         minLength={1}
-        className="h-9 w-1/2 rounded p-3 focus:outline-none"
+        className="h-full w-full rounded px-3 text-center focus:text-start focus:placeholder-transparent focus:outline-none"
         type="text"
         placeholder="Enter your todo here"
         onChange={(e) => onInputChange(e)}
         value={currentInputValue}
       />
-      <button className="todo-input-add" type="submit">
-        <MaterialIcon icon="add" />
+      <button
+        className="top-10px absolute right-3 flex rounded bg-sky-700 p-1 hover:scale-110"
+        type="submit"
+      >
+        <MaterialIcon icon="add" color="white" />
       </button>
     </form>
   );

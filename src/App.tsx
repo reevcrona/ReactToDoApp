@@ -51,7 +51,7 @@ function App() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-start bg-sky-700 font-mono">
       <h1 className="title mb-10 mt-10 text-5xl text-slate-50">ToDo List</h1>
-      <div className="w-full">
+      <div className="max-w-taskMaxWidth w-full">
         <TodoInput onAddItem={addToDoItem} />
       </div>
       <div className="max-w-taskContainerMaxWidth flex w-full flex-col items-center justify-center gap-4 border-b-2 px-3 pb-4">

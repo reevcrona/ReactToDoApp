@@ -16,14 +16,14 @@ export default function TodoItem({
       <div className="flex items-center justify-center">
         {!task.isCompleted && (
           <div
-            className="hover:cursor-pointer"
+            className="mr-1.5 flex border-2 border-black p-0.5 hover:scale-110 hover:cursor-pointer"
             onClick={() => clickHandlers.onComplete(task)}
           >
-            <MaterialIcon icon="task_alt" color="black" />
+            <MaterialIcon icon="task_alt" color="green" />
           </div>
         )}
         <div
-          className="hover:cursor-pointer"
+          className="flex border-2 border-black p-0.5 hover:scale-110 hover:cursor-pointer"
           onClick={() => clickHandlers.onDelete(task)}
         >
           <MaterialIcon icon="delete" color="black" />
