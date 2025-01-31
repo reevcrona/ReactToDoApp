@@ -11,8 +11,8 @@ export interface TaskProps {
     onDelete: (todoItem: Task) => void;
     onComplete: (todoItem: Task) => void;
   };
-  taskBgColor: "bg-slate-50" | "bg-green-500";
-  taskTextColor: "text-zinc-950" | "text-slate-50";
+  taskBgColor: "bg-slate-100" | "bg-green-500";
+  taskTextColor: "text-zinc-950" | "text-slate-100";
 }
 
 export interface todoInputProps {

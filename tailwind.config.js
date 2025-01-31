@@ -10,6 +10,9 @@ export default {
         taskMaxWidth: "600px",
         taskContainerMaxWidth: "700px",
       },
+      boxshadow: {
+        text: "1px 1px 2xp black",
+      },
     },
   },
   plugins: [],

@@ -46,8 +46,8 @@ function App() {
             onDelete: deleteTodo,
             onComplete: completeTodoItem,
           }}
-          taskBgColor={isTaskCompleted ? "bg-green-500" : "bg-slate-50"}
-          taskTextColor={isTaskCompleted ? "text-slate-50" : "text-zinc-950"}
+          taskBgColor={isTaskCompleted ? "bg-green-500" : "bg-slate-100"}
+          taskTextColor={isTaskCompleted ? "text-slate-100" : "text-zinc-950"}
         />
       );
     });
@@ -59,6 +59,7 @@ function App() {
       <div className="max-w-taskMaxWidth w-full">
         <TodoInput onAddItem={addToDoItem} />
       </div>
+
       <div className="max-w-taskContainerMaxWidth flex w-full flex-col items-center justify-center gap-4 border-b-2 px-3 pb-4">
         <h2 className="title mt-4 text-2xl text-slate-50">Todo Items</h2>
         {renderTasks(todoItems)}

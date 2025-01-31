@@ -12,7 +12,7 @@ export default function TodoItem({
     <div
       className={`max-w-taskMaxWidth flex w-full items-center justify-between ${taskBgColor} rounded-lg p-4 text-white`}
     >
-      <div className={taskTextColor}>{task.title}</div>
+      <h3 className={`${taskTextColor} text-xl font-medium`}>{task.title}</h3>
 
       <div className="flex items-center justify-center">
         {!task.isCompleted && (
