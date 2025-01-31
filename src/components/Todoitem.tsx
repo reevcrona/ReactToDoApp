@@ -2,10 +2,16 @@ import "./Todoitem.css";
 import MaterialIcon from "material-icons-react";
 import { TaskProps } from "../types";
 
-export default function TodoItem({ task, clickHandlers }: TaskProps) {
+export default function TodoItem({
+  task,
+  clickHandlers,
+  taskBgColor,
+}: TaskProps) {
   return (
-    <div className="flex items-center justify-center rounded-lg bg-red-500 p-4 text-white">
-      <div className="todo-title">{task.title}</div>
+    <div
+      className={`flex items-center justify-center ${taskBgColor} rounded-lg p-4 text-white`}
+    >
+      <div className="text-zinc-950">{task.title}</div>
 
       <div className="icons-group">
         {!task.isCompleted && (
@@ -13,14 +19,14 @@ export default function TodoItem({ task, clickHandlers }: TaskProps) {
             className="todo-complete"
             onClick={() => clickHandlers.onComplete(task)}
           >
-            <MaterialIcon icon="task_alt" color="white" />
+            <MaterialIcon icon="task_alt" color="black" />
           </div>
         )}
         <div
           className="todo-delete"
           onClick={() => clickHandlers.onDelete(task)}
         >
-          <MaterialIcon icon="delete" color="white" />
+          <MaterialIcon icon="delete" color="black" />
         </div>
       </div>
     </div>
