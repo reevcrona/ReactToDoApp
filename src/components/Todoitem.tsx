@@ -9,21 +9,21 @@ export default function TodoItem({
 }: TaskProps) {
   return (
     <div
-      className={`flex items-center justify-center ${taskBgColor} rounded-lg p-4 text-white`}
+      className={`flex items-center justify-between ${taskBgColor} rounded-lg p-4 text-white`}
     >
       <div className="text-zinc-950">{task.title}</div>
 
       <div className="icons-group">
         {!task.isCompleted && (
           <div
-            className="todo-complete"
+            className="hover:cursor-pointer"
             onClick={() => clickHandlers.onComplete(task)}
           >
             <MaterialIcon icon="task_alt" color="black" />
           </div>
         )}
         <div
-          className="todo-delete"
+          className="hover:cursor-pointer"
           onClick={() => clickHandlers.onDelete(task)}
         >
           <MaterialIcon icon="delete" color="black" />

@@ -49,17 +49,17 @@ function App() {
   }
 
   return (
-    <div className="min-h-full bg-sky-700 font-mono">
+    <div className="min-h-full bg-sky-700 p-5 font-mono">
       <h1 className="title">ToDo List</h1>
       <div>
         <TodoInput onAddItem={addToDoItem} />
       </div>
-      <div className="list-block">
+      <div className="flex flex-col justify-stretch gap-4">
         <h2 className="title">Todo Items</h2>
         <hr />
         {renderTasks(todoItems)}
       </div>
-      <div className="list-block">
+      <div className="flex flex-col justify-stretch gap-4">
         <h2 className="title">Completed Items</h2>
         {renderTasks(completedItems)}
         <hr />
