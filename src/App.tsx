@@ -35,17 +35,22 @@ function App() {
   }
 
   function renderTasks(taskArray: Task[]): React.JSX.Element[] {
-    return taskArray.map((item) => (
-      <TodoItem
-        key={item.id}
-        task={item}
-        clickHandlers={{
-          onDelete: deleteTodo,
-          onComplete: completeTodoItem,
-        }}
-        taskBgColor={item.isCompleted ? "bg-green-500" : "bg-slate-50"}
-      />
-    ));
+    return taskArray.map((item) => {
+      const isTaskCompleted = item.isCompleted;
+
+      return (
+        <TodoItem
+          key={item.id}
+          task={item}
+          clickHandlers={{
+            onDelete: deleteTodo,
+            onComplete: completeTodoItem,
+          }}
+          taskBgColor={isTaskCompleted ? "bg-green-500" : "bg-slate-50"}
+          taskTextColor={isTaskCompleted ? "text-slate-50" : "text-zinc-950"}
+        />
+      );
+    });
   }
 
   return (

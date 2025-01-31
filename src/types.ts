@@ -12,6 +12,7 @@ export interface TaskProps {
     onComplete: (todoItem: Task) => void;
   };
   taskBgColor: "bg-slate-50" | "bg-green-500";
+  taskTextColor: "text-zinc-950" | "text-slate-50";
 }
 
 export interface todoInputProps {
